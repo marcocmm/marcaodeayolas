@@ -1,0 +1,6 @@
+- tirar balde pintado
+- sinalizar que é pra rolar o site
+- diminuir resolução da foto grande
+- diminuir resolução da foto pequena
+- Adicionar piscina e churrasqueira na foto sobre hotel
+- Conferir resolução imagens abertas

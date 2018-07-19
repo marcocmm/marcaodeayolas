@@ -19,7 +19,7 @@ p{
   text-align: justify
 }
 /* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5, .bgimg-6 {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -51,6 +51,11 @@ p{
 
 /* Five image (Contact) */
 .bgimg-5 {
+    background-image: url("images/van/van.jpg");
+    min-height: 400px;
+}
+/* Six image (Contact) */
+.bgimg-6 {
     background-image: url("images/backgroud1.jpg");
     min-height: 400px;
 }
@@ -61,7 +66,7 @@ p{
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
-    .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
+    .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5, .bgimg-6 {
         background-attachment: scroll;
     }
 }
@@ -111,7 +116,13 @@ p{
 .mySlides {
   display: none;
 }
-
+.mySlidesTransporte {
+  display: none;
+}
+}
+.mySlidesPeixes {
+  display: none;
+}
 .cursor {
   cursor: pointer;
 }
@@ -166,14 +177,13 @@ img {
   color: white;
 }
 
-.demo {
-  opacity: 0.6;
-}
 
 .active,
 .demo:hover {
   opacity: 1;
 }
+
+
 
 img.hover-shadow {
   transition: 0.3s;
@@ -200,6 +210,7 @@ img.hover-shadow {
   float: left;
   width: 25%;
 }
+
 </style>
 <body>
 
@@ -213,6 +224,7 @@ img.hover-shadow {
     <a href="#hotel" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Sobre</a>
     <a href="#estrutura" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Estrutura</a>
     <a href="#peixes" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Peixes</a>
+    <a href="#transporte" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Transporte</a>
     <a href="#tarifario" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Tarifário</a>
     <a href="#contato" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Contato</a>
     <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
@@ -225,6 +237,7 @@ img.hover-shadow {
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
     <a href="#estrutura" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
     <a href="#peixes" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#transporte" class="w3-bar-item w3-button" onclick="toggleFunction()">TRANSPORTE</a>
     <a href="#tarifario" class="w3-bar-item w3-button" onclick="toggleFunction()">TARIFARIO</a>
     <a href="#contato" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTATO</a>
     <!--<a href="#" class="w3-bar-item w3-button">SEARCH</a>-->
@@ -325,8 +338,7 @@ img.hover-shadow {
 
 <div class="row">
   <div class="column">
-    <img src="images/estrutura/frente_hotel.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="frente hotel" >
-    
+    <img src="images/estrutura/frente_hotel.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="frente hotel" >  
   </div>
   <div class="column">
     <img src="images/estrutura/restaurante.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor w3-round w3-hover-opacity">
@@ -489,7 +501,7 @@ img.hover-shadow {
   <div class="w3-row-padding w3-text-white w3-large">
     <div class="w3-half w3-margin-bottom">
       <div class="w3-display-container">
-        <img src="images/peixes/peixe4.jpg" class="w3-round w3-hover-opacity" onclick="onClick(this)" alt="Cinque Terre" style="width:100%" height=380>
+        <img src="images/peixes/peixe4.jpg" onclick="openModalPeixes();currentSlide(1)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="Cinque Terre" style="width:100%" height=380>
         <span class="w3-display-bottomleft w3-padding">Dourado</span>
       </div>
     </div>
@@ -497,13 +509,13 @@ img.hover-shadow {
       <div class="w3-row-padding" style="margin:0 -16px">
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="images/peixes/peixe8.jpg" class="w3-round w3-hover-opacity" onclick="onClick(this)" alt="New York"  style="width:100%">
+            <img src="images/peixes/peixe8.jpg" onclick="openModalPeixes();currentSlide(2)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="New York"  style="width:100%">
             <span class="w3-display-bottomleft w3-padding">Pacu</span>
           </div>
         </div>
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="images/peixes/peixe9.jpg"class="w3-round w3-hover-opacity" onclick="onClick(this)"  alt="San Francisco" style="width:100%">
+            <img src="images/peixes/peixe9.jpg"onclick="openModalPeixes();currentSlide(3)" class="hover-shadow cursor w3-round w3-hover-opacity"  alt="San Francisco" style="width:100%">
             <span class="w3-display-bottomleft w3-padding">Pintado</span>
           </div>
         </div>
@@ -511,13 +523,13 @@ img.hover-shadow {
       <div class="w3-row-padding" style="margin:0 -16px">
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="images/peixes/peixe3.jpg"class="w3-round w3-hover-opacity" onclick="onClick(this)" alt="Pisa" style="width:100%">
+            <img src="images/peixes/peixe3.jpg"onclick="openModalPeixes();currentSlide(4)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="Pisa" style="width:100%">
             <span class="w3-display-bottomleft w3-padding">Pintado</span>
           </div>
         </div>
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="images/peixes/peixe5.jpg" class="w3-round w3-hover-opacity" onclick="onClick(this)" alt="Paris" style="width:100%" height="170">
+            <img src="images/peixes/peixe5.jpg" onclick="openModalPeixes();currentSlide(5)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="Paris" style="width:100%" height="170">
             <span class="w3-display-bottomleft w3-padding">Dourado</span>
           </div>
         </div>
@@ -531,22 +543,115 @@ img.hover-shadow {
   </div>
   <div class="w3-row-padding">
     <div class="w3-half w3-margin-bottom">
-      <img src="images/peixes/peixe2.jpg" class="w3-round w3-hover-opacity" onclick="onClick(this)" alt="Norway" style="width:100%">
+      <img src="images/peixes/peixe2.jpg" onclick="openModalPeixes();currentSlide(6)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="Norway" style="width:100%">
       <div class="w3-container w3-white">
         <h3>Pintado</h3>
       </div>
     </div>
     <div class="w3-half w3-margin-bottom">
-      <img src="images/peixes/peixe1.jpg" class="w3-round w3-hover-opacity" onclick="onClick(this)"  alt="Austria" style="width:100%">
+      <img src="images/peixes/peixe1.jpg" onclick="openModalPeixes();currentSlide(7)" class="hover-shadow cursor w3-round w3-hover-opacity"  alt="Austria" style="width:100%">
       <div class="w3-container w3-white">
         <h3>Dourado</h3>
       </div>
     </div>
   </div>
+
+
+<div id="myModalPeixes" class="modal">
+  <span class="close cursor" onclick="closeModalPeixes()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlidesPeixes">
+      <div class="numbertext">1 / 7</div>
+      <img src="images/peixes/peixe4.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlidesPeixes">
+      <div class="numbertext">2 / 7</div>
+      <img src="images/peixes/peixe8.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlidesPeixes">
+      <div class="numbertext">3 / 7</div>
+      <img src="images/peixes/peixe9.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlidesPeixes">
+      <div class="numbertext">4 / 7</div>
+      <img src="images/peixes/peixe3.jpg" style="width:100%">
+    </div>
+        <div class="mySlidesPeixes">
+      <div class="numbertext">5 / 7</div>
+      <img src="images/peixes/peixe5.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlidesPeixes">
+      <div class="numbertext">6 / 7</div>
+      <img src="images/peixes/peixe2.jpg" style="width:100%">
+    </div>
+    <div class="mySlidesPeixes">
+      <div class="numbertext">7 / 7</div>
+      <img src="images/peixes/peixe1.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlidesPeixes(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlidesPeixes(1)">&#10095;</a>
+
+    
+  </div>
+</div>
+
 <!-- End page content -->
 </div>
 
-<!-- Four Parallax Image with Portfolio Text -->
+
+<!-- Five Parallax Image with Portfolio Text -->
+<div class="bgimg-5 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">TRANSPORTE</span>
+  </div>
+</div>
+
+
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="transporte">
+
+<div class="w3-container">
+    <h3 class="w3-center">Veja as opções para chegar nesse paraíso da pesca;</h3>
+    <p class="w3-center">
+    <br><br>
+    -Avião até Foz do Iguaçu ou Assunção e fazemos seu traslado de van ou avião até o hotel.
+    <br>
+    -Traslado de Foz do Iguaçu em ônibus leito ou van
+    <br>
+    - Fretamento com ônibus leito para grupos de qualquer cidade do Brasil
+    <br>
+    -De veiculo próprio (450 km de Foz do Iguaçu, ótimo asfalto)
+    <br>
+    -pista de pouso (base aérea) em Ayolas (12 km do hotel)
+    <br>
+    -pista de pouso (terra) no hotel (1.000 metros)</p>
+
+</div>
+
+  <div class="w3-content w3-container" style="height: 600px">
+    <h4 class="w3-center">Confira fotos da Van exclusiva do Hotel</h4>
+
+    <div class="w3-content w3-section" style="max-width:600px">
+      <img class="mySlidesTransporte" src="images/van/van2.jpg" style="width:100%">
+      <img class="mySlidesTransporte" src="images/van/van3.jpg" style="width:100%">
+      <img class="mySlidesTransporte" src="images/van/van4.jpg" style="width:100%">
+      <img class="mySlidesTransporte" src="images/van/van5.jpg" style="width:100%">
+      <img class="mySlidesTransporte" src="images/van/van6.jpg" style="width:100%">
+      <img class="mySlidesTransporte" src="images/van/van8.jpg" style="width:100%">
+    </div>
+</div>
+
+
+</div>
+
+<!-- Five Parallax Image with Portfolio Text -->
 <div class="bgimg-4 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">TARIFÁRIO</span>
@@ -578,8 +683,9 @@ img.hover-shadow {
 </div>
 
 
-<!-- Five Parallax Image with Portfolio Text -->
-<div class="bgimg-5 w3-display-container w3-opacity-min">
+
+<!-- Six Parallax Image with Portfolio Text -->
+<div class="bgimg-6 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">CONTATO</span>
   </div>
@@ -593,37 +699,22 @@ img.hover-shadow {
   <p class="w3-center"><em>Aguardamos seu contato</em></p>
 
   <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
+    <div class="w3-col m4 w3-panel">
       <!-- Add Google Maps -->
-      <!--<div id="googleMap" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>-->
-    </div>
-    <div class="w3-col m8 w3-panel">
-      <div class="w3-large w3-margin-bottom">
+        <div class="w3-right w3-center" id="map" style="width:100%;height:500px"></div>
+  </div>
+
+      <div class="w3-large w3-margin-bottom w3-center">
+        <br><br><br><br><br>
         <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Campo Mourão, Paraná, BR<br>
         <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Ayolas - Coratei, Misiones, PY<br>
         <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Fone: +55 (44) 9 9125-2424<br>
         <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Fone: +55 (44) 3017-2424<br>
         <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: marcaodeayolas@gmail.com<br>
       </div>
-      <!--
-      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Nome" required name="Name">
-          </div>
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-          </div>
-        </div>
-        <input class="w3-input w3-border" type="text" placeholder="Mensagem" required name="Message">
-        <button class="w3-button w3-black w3-right w3-section" type="submit">
-          <i class="fa fa-paper-plane"></i> Enviar Mensagem
-        </button>
-      </form>-->
-    </div>
-  </div>
 </div>
+</div>
+
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
@@ -637,20 +728,18 @@ img.hover-shadow {
  
 <!-- Add Google Maps -->
 <script>
-function myMap()
-{
-  myCenter=new google.maps.LatLng(41.878114, -87.629798);
-  var mapOptions= {
-    center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-  var marker = new google.maps.Marker({
-    position: myCenter,
-  });
+function myMap() {
+  var myCenter = new google.maps.LatLng(-27.411898, -56.955272);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 5};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
   marker.setMap(map);
+
+  var infowindow = new google.maps.InfoWindow({
+    content: "Hotel Dona Ramonita!"
+  });
+  infowindow.open(map,marker);
 }
 
 // Modal Image Gallery
@@ -682,11 +771,8 @@ function  toggleFunction() {
     }
 }
 </script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
 
 
 
@@ -732,6 +818,62 @@ function showSlides(n) {
 }
 </script>
 
+<script>
+function openModalPeixes() {
+  document.getElementById('myModalPeixes').style.display = "block";
+}
+
+function closeModalPeixes() {
+  document.getElementById('myModalPeixes').style.display = "none";
+}
+
+var slideIndexPeixes = 1;
+showSlidesPeixes(slideIndexPeixes);
+
+function plusSlidesPeixes(n) {
+  showSlidesPeixes(slideIndexPeixes += n);
+}
+
+function currentSlidesPeixes(n) {
+  showSlidesPeixes(slideIndexPeixes = n);
+}
+
+function showSlidesPeixes(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlidesPeixes");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > x.length) {slideIndexPeixes = 1}
+  if (n < 1) {slideIndexPeixes = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+
+  }
+  x[slideIndexPeixes-1].style.display = "block";
+  dots[slideIndexPeixes-1].className += " w3-opacity-off";
+  captionText.innerHTML = dots[slideIndexPeixes-1].alt;
+}
+
+</script>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlidesTransporte");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
 
 </body>
 </html>

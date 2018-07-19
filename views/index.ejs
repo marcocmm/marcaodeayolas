@@ -15,7 +15,9 @@ body, html {
     line-height: 1.8;
 }
 
-
+p{
+  text-align: justify
+}
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
     background-attachment: fixed;
@@ -63,26 +65,672 @@ body, html {
         background-attachment: scroll;
     }
 }
+
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
 </style>
 <body>
 
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">Início</a>
+    <a href="#hotel" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Sobre</a>
+    <a href="#estrutura" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Estrutura</a>
+    <a href="#peixes" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Peixes</a>
+    <a href="#tarifario" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Tarifário</a>
+    <a href="#contato" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Contato</a>
+    <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>-->
+    </a>
+  </div>
 
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#estrutura" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#peixes" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#tarifario" class="w3-bar-item w3-button" onclick="toggleFunction()">TARIFARIO</a>
+    <a href="#contato" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTATO</a>
+    <!--<a href="#" class="w3-bar-item w3-button">SEARCH</a>-->
+  </div>
 </div>
 
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
     <!--<img src="images/logo_marcao.png"  alt="Photo of Me" width="400" height="300">-->
-   <h1 class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">DESCULPE O TRANSTORNO! </h1>
-</br>
-
-   <h1 class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">ESTAMOS 	EM CONSTRUÇÃO </h1>
-</br>
-</br>
-    <img src="images/logo_ramonita.png" alt="Photo of Me" width="600" >
-
+    <img src="images/logo_ramonita.png" alt="Photo of Me" width="430" class="pt-5">
+<!--    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MARCÃO <span class="w3-hide-small">DE</span> AYOLAS</span>
+-->
   </div>
 </div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="hotel">
+  <h3 class="w3-center">Sobre o Hotel</h3>
+  <p class="w3-center"><em></em></p>
+  <p>
+    O <b>Hotel Doña Ramonita</b> possui completa infraestrutura para garantir a tranquilidade e o conforto que a sua família merece, tornando a sua estadia especial. 
+
+    Uma imagem vale mais do que mil palavras, mas não custa nada dizer que no Hotel Doña Ramonita você vai encontrar imagens de tirar o fôlego, seja apreciando nossos jardins, gramados, árvores e animais silvestres nativos. Vale a pena ver de perto.
+
+  </p>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <!--<p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>-->
+      <img src="images/hotel_resumo.jpg" onclick="onClick(this)" class="w3-image w3-round w3-hover-opacity"  alt="Photo of Me" width="500" height="333">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p>
+        Em Ayolas, você vai desfrutar do prazer de pescar nas águas do Rio Paraná, sétimo maior rio em extensão do mundo e segundo da América do Sul. Além da extensão, o que também chama a atenção são suas hidrelétricas. Em Foz do Iguaçu está localizada a famosa hidrelétrica de Itaipu. Seguindo o curso do rio, a 400 km encontramos a hidrelétrica binacional de Yacyretá, localizada a cerca de 30 km acima do <b>Hotel Doña Ramonita.</b>
+
+        O rio possui uma profundidade média de cerca de 23 metros e profundidade máxima de 170 metros, além de estar antes da última barragem do rio o que favorece a aglomeração dos peixes para a pesca dos gigantes do rio Paraná.
+</p>
+
+<br>
+<p class="w3-center">
+ Clique na imagem para visualisar a estrutura do hotel.
+</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">Segurança</span><br>
+    
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">Conforto</span><br>
+  
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">Experiência</span><br>
+    
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">Qualidade</span><br>
+    
+  </div>
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">Estrutura</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="estrutura">
+  <h3 class="w3-center">Estrutura do Hotel</h3>
+  <p class="w3-center">Nosso hotel possui uma das melhores estruturas no ramo de hoteis de pesca.<br></p><br>
+
+  <p>
+    Para maior comodidade dispomos de 31 acomodações distribuídos em 3 ambientes para atender diferentes grupos, sendo 15 quartos no prédio principal e outros 16 quartos dispostos em dois prédios com infraestrutura diferenciada e privativa, contendo cozinha completa e churrasqueira. As acomodações estão equipadas com ar condicionado e frigobar.
+  </br></br>
+    Toda estrutura do hotel se encontra às margens do rio Paraná. Contamos com porto privativo e lanchas de fibra equipadas conforme as normas da marinha. Contamos ainda com experientes guias de pesca, para proporcionar uma pescaria de excelência com a segurança que você e sua família merecem.
+  </br></br>
+
+    O hotel oferece pensão completa. Café da manhã com frutas e sucos, almoço e jantar composto por comida com sabor tipicamente brasileiro. Para melhor atendimento, o hóspede pode optar por levar seu almoço em marmitas térmicas.
+  </br></br>
+
+    Dispomos de playground e de uma ampla piscina cercada por quiosques, onde animais silvestres transitam livremente. Aqui você encontra as condições perfeitas para espairecer e recuperar as energias. 
+
+  </p>
+
+  <br>
+
+  <p class="w3-center"><em> Confira nas imagens a baixo o que te espera em Ayolas-Coratei-Paraguay</em></p><br>
+
+
+<div class="row">
+  <div class="column">
+    <img src="images/estrutura/frente_hotel.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="frente hotel" >
+    
+  </div>
+  <div class="column">
+    <img src="images/estrutura/restaurante.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor w3-round w3-hover-opacity">
+  </div>
+  <div class="column">
+    <img src="images/estrutura/mesas.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor w3-round w3-hover-opacity">
+  </div>
+  <div class="column">
+    <img src="images/estrutura/quarto.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor w3-round w3-hover-opacity">
+  </div>
+</div>
+</br>
+
+<div class="row">
+  <div class="column">
+    <img src="images/estrutura/piscina.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor w3-round w3-hover-opacity">
+  </div>
+  <div class="column">
+    <img src="images/estrutura/bangalo.jpg" style="width: 100%" height="161" onclick="openModal();currentSlide(6)" class="hover-shadow cursor w3-round w3-hover-opacity">
+  </div>
+  <div class="column">
+    <img src="images/estrutura/churrasqueira_bangalo.jpg" style="width: 100%" height="161" onclick="openModal();currentSlide(7)" class="hover-shadow cursor w3-round w3-hover-opacity">
+  </div>
+  <div class="column">
+    <img src="images/estrutura/porto.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor w3-round w3-hover-opacity">
+  </div>
+</div>
+</br>
+<div class="row">
+  <div class="column">
+    <img src="images/estrutura/churrasqueira.jpg" style="width:100%" onclick="openModal();currentSlide(9)" class="hover-shadow cursor w3-round w3-hover-opacity">
+  </div>
+  <div class="column">
+    <img src="images/estrutura/churrasqueira2.jpg" style="width:100%" onclick="openModal();currentSlide(10)" class="hover-shadow cursor w3-round w3-hover-opacity">
+  </div>
+  <div class="column">
+    <img src="images/estrutura/barco.jpg" style="width:100%" onclick="openModal();currentSlide(11)" class="hover-shadow cursor w3-round w3-hover-opacity">
+  </div>
+  <div class="column">
+    <img src="images/estrutura/vista.jpg" style="width: 100%" height="147" onclick="openModal();currentSlide(12)" class="hover-shadow cursor w3-round w3-hover-opacity">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 12</div>
+      <img src="images/estrutura/frente_hotel.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 12</div>
+      <img src="images/estrutura/restaurante.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 12</div>
+      <img src="images/estrutura/mesas.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 12</div>
+      <img src="images/estrutura/quarto.jpg" style="width:100%">
+    </div>
+        <div class="mySlides">
+      <div class="numbertext">5 / 12</div>
+      <img src="images/estrutura/piscina.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 12</div>
+      <img src="images/estrutura/bangalo.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">7 / 12</div>
+      <img src="images/estrutura/churrasqueira_bangalo.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">8 / 12</div>
+      <img src="images/estrutura/porto.jpg" style="width:100%">
+    </div>
+        <div class="mySlides">
+      <div class="numbertext">9 / 12</div>
+      <img src="images/estrutura/churrasqueira.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">10 / 12</div>
+      <img src="images/estrutura/churrasqueira2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">11 / 12</div>
+      <img src="images/estrutura/barco.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">12 / 12</div>
+      <img src="images/estrutura/vista.jpg" style="width:100%" alt="Vista Hotel">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    
+  </div>
+</div>
+
+</br>
+</br>
+</br>
+</br>
+
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">Peixes</span>
+  </div>
+</div>
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px;" id="peixes">
+
+  <!-- Good offers -->
+  <div class="w3-container w3-margin-top">
+   <h3 class="w3-center">Peixes da bacia do Prata</h3>
+
+  <p>
+
+    Famoso pela riqueza de variedades de peixes, podemos destacar as cinco espécies encontradas em abundância.
+    <br>
+    O Dourado - famoso Rei do Rio - conhecido pela sua agressividade pode ser encontrado nas corredeiras existentes em toda a extensão do rio. O maior atrativo dessa pesca são os espetaculares saltos na tentativa de se livrarem do anzol.
+    O Pintado é um peixe de couro, carnívoro, cujo o maior atrativo é o tamanho, pois a espécie pode atingir até 80 kg.
+    Além do Dourado e do Pintado que são os troféus do rio Paraná, também são encontradas a Piapara, Piracanjuba e o Pacu.
+    <br>
+    Além desses exemplares, o pescador terá a oportunidade de fisgar outras espécies tão esportivas quanto as demais, como cachara, palmito, curimba, piau, etc.
+  </p>
+
+  <br><br>
+
+    <h4 class="w3-center">Alguns peixes registrados em pescarias no hotel</h3>
+    <br>
+  </div>
+  <div class="w3-row-padding w3-text-white w3-large">
+    <div class="w3-half w3-margin-bottom">
+      <div class="w3-display-container">
+        <img src="images/peixes/peixe4.jpg" class="w3-round w3-hover-opacity" onclick="onClick(this)" alt="Cinque Terre" style="width:100%" height=380>
+        <span class="w3-display-bottomleft w3-padding">Dourado</span>
+      </div>
+    </div>
+    <div class="w3-half">
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="images/peixes/peixe8.jpg" class="w3-round w3-hover-opacity" onclick="onClick(this)" alt="New York"  style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Pacu</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="images/peixes/peixe9.jpg"class="w3-round w3-hover-opacity" onclick="onClick(this)"  alt="San Francisco" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Pintado</span>
+          </div>
+        </div>
+      </div>
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="images/peixes/peixe3.jpg"class="w3-round w3-hover-opacity" onclick="onClick(this)" alt="Pisa" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Pintado</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="images/peixes/peixe5.jpg" class="w3-round w3-hover-opacity" onclick="onClick(this)" alt="Paris" style="width:100%" height="170">
+            <span class="w3-display-bottomleft w3-padding">Dourado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Explore Nature -->
+  <div class="w3-container">
+    <h1>Gigantes de Ayolas</h1>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom">
+      <img src="images/peixes/peixe2.jpg" class="w3-round w3-hover-opacity" onclick="onClick(this)" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Pintado</h3>
+      </div>
+    </div>
+    <div class="w3-half w3-margin-bottom">
+      <img src="images/peixes/peixe1.jpg" class="w3-round w3-hover-opacity" onclick="onClick(this)"  alt="Austria" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Dourado</h3>
+      </div>
+    </div>
+  </div>
+<!-- End page content -->
+</div>
+
+<!-- Four Parallax Image with Portfolio Text -->
+<div class="bgimg-4 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">TARIFÁRIO</span>
+  </div>
+</div>
+
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="tarifario">
+  <h3 class="w3-center">Monte seu pacote!</h3>
+  <p class="w3-center"><em>Nosso hotel possui uma das melhores estruturas no ramo de hoteis de pesca.<br> Confira nas imagens a baixo o que te espera em Ayolas-Coratei-Paraguay</em></p><br>
+
+<ul>
+<li>Apartamentos duplo, triplo ou quadruplo com ar condicionado e frigobar;</li>
+<li>Café da manhã;</li>
+<li>Almoço ou marmita térmica na lancha;</li>
+<li>Jantar;</li>
+<li>Lancha/Guia de pesca, com motor 40 HP ou maior p/ dia;</li>
+<li>40 litros de combustível por lancha/dia;</li>
+<li>12 tuviras grandes lancha/dia;</li>
+<li>18 tuviras douradeira lancha/dia;</li>
+<li>01 balde de milho cozido lancha/dia;</li>
+<li>Minhoca lancha/dia;</li>
+<li>Colete salva vida na lancha;</li>
+<li>Conservadora térmica no barco;</li>
+<li>Licença de pesca e rol da Marinha.</li>
+</ul>
+<h3> Favor entrar em contato por telefone ou email para consultar valores e pacotes.</h3>
+</div>
+
+
+<!-- Five Parallax Image with Portfolio Text -->
+<div class="bgimg-5 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">CONTATO</span>
+  </div>
+</div>
+
+
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contato">
+  <h3 class="w3-center">Para reservas entre em contato por telefone ou email</h3>
+  <p class="w3-center"><em>Aguardamos seu contato</em></p>
+
+  <div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m4 w3-container">
+      <!-- Add Google Maps -->
+      <!--<div id="googleMap" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>-->
+    </div>
+    <div class="w3-col m8 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Campo Mourão, Paraná, BR<br>
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Ayolas - Coratei, Misiones, PY<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Fone: +55 (44) 9 9125-2424<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Fone: +55 (44) 3017-2424<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: marcaodeayolas@gmail.com<br>
+      </div>
+      <!--
+      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Nome" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <input class="w3-input w3-border" type="text" placeholder="Mensagem" required name="Message">
+        <button class="w3-button w3-black w3-right w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> Enviar Mensagem
+        </button>
+      </form>-->
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Para o início</a>
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.facebook.com/marcaodeayolas" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/marcaodeayolas/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+  </div>
+  <p class="w3-center">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+ 
+<!-- Add Google Maps -->
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(41.878114, -87.629798);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function  toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+
+
+<!--
+Scripts para galeria de fotos
+-->
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 
 
 </body>

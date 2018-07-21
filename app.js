@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var nodemailer = require('nodemailer');
 
 var app = express();
 
@@ -37,5 +38,32 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.post('/send-email', function (req, res) {
+      let transporter = nodeMailer.createTransport({
+          host: 'smtp.gmail.com',
+          port: 465,
+          secure: true,
+          auth: {
+              user: 'emailsendermarcao@gmail.com',
+              pass: 'emailsendermarcao'
+          }
+      });
+      let mailOptions = {
+          from: '"Marcão" <emailsendermarcao@gmail.com>', // sender address
+          to: req.body.to, // list of receivers
+          subject: req.body.subject, // Subject line
+          text: req.body.body, // plain text body
+          html: '<b>NodeJS Email Tutorial</b>' // html body
+      };
+
+      transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+              return console.log(error);
+          }
+          console.log('Message %s sent: %s', info.messageId, info.response);
+              res.render('index');
+          });
+      });
 
 module.exports = app;

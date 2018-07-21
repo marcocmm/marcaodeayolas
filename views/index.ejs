@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>Marcão de Ayolas</title>
 <meta charset="UTF-8">
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
@@ -7,6 +8,48 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+
+
+
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+ <style>
+body, html, .main {
+    height: 100%;
+}
+
+section {
+    min-height: 100%;
+}
+</style>
+
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
@@ -212,6 +255,7 @@ img.hover-shadow {
 }
 
 </style>
+</head>
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -220,13 +264,13 @@ img.hover-shadow {
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <a href="#home" class="w3-bar-item w3-button">Início</a>
-    <a href="#hotel" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Sobre</a>
-    <a href="#estrutura" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Estrutura</a>
-    <a href="#peixes" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Peixes</a>
-    <a href="#transporte" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-car"></i> Transporte</a>
-    <a href="#tarifario" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Tarifário</a>
-    <a href="#contato" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Contato</a>
+    <a href="#home" class="w3-bar-item w3-button menu">Início</a>
+    <a href="#hotel" class="w3-bar-item w3-button w3-hide-small menu"><i class="fa fa-user"></i> Sobre</a>
+    <a href="#estrutura" class="w3-bar-item w3-button w3-hide-small menu"><i class="fa fa-th"></i> Estrutura</a>
+    <a href="#peixes" class="w3-bar-item w3-button w3-hide-small menu"><i class="fa fa-th"></i> Peixes</a>
+    <a href="#transporte" class="w3-bar-item w3-button w3-hide-small menu"><i class="fa fa-car"></i> Transporte</a>
+    <a href="#tarifario" class="w3-bar-item w3-button w3-hide-small menu"><i class="fa fa-th"></i> Tarifário</a>
+    <a href="#contato" class="w3-bar-item w3-button w3-hide-small menu"><i class="fa fa-envelope"></i> Contato</a>
     <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
       <i class="fa fa-search"></i>-->
     </a>
@@ -234,18 +278,20 @@ img.hover-shadow {
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#estrutura" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-    <a href="#peixes" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-    <a href="#transporte" class="w3-bar-item w3-button" onclick="toggleFunction()">TRANSPORTE</a>
-    <a href="#tarifario" class="w3-bar-item w3-button" onclick="toggleFunction()">TARIFARIO</a>
-    <a href="#contato" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTATO</a>
+    <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()">Início</a>
+    <a href="#hotel" class="w3-bar-item w3-button" onclick="toggleFunction()">Sobre</a>
+    <a href="#estrutura" class="w3-bar-item w3-button" onclick="toggleFunction()">Estrutura</a>
+    <a href="#peixes" class="w3-bar-item w3-button" onclick="toggleFunction()">Peixes</a>
+    <a href="#transporte" class="w3-bar-item w3-button" onclick="toggleFunction()">Transporte</a>
+    <a href="#tarifario" class="w3-bar-item w3-button" onclick="toggleFunction()">Tarifário</a>
+    <a href="#contato" class="w3-bar-item w3-button" onclick="toggleFunction()">Contato</a>
+
     <!--<a href="#" class="w3-bar-item w3-button">SEARCH</a>-->
   </div>
 </div>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+<div class="bgimg-1 w3-display-container w3-opacity-min main" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
     <!--<img src="images/logo_marcao.png"  alt="Photo of Me" width="400" height="300">-->
     <img src="images/logo_ramonita.png" alt="Logo" width="430" class="pt-5">
@@ -257,11 +303,10 @@ img.hover-shadow {
 <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="hotel">
   <h3 class="w3-center">Sobre o Hotel</h3>
-  <p class="w3-center"><em></em></p>
   <p>
     O <b>Hotel Doña Ramonita</b> possui completa infraestrutura para garantir a tranquilidade e o conforto que a sua família merece, tornando a sua estadia especial. 
 
-    Uma imagem vale mais do que mil palavras, mas não custa nada dizer que no Hotel Doña Ramonita você vai encontrar imagens de tirar o fôlego, seja apreciando nossos jardins, gramados, árvores e animais silvestres nativos. Vale a pena ver de perto.
+    Uma imagem vale mais do que mil palavras e no <b>Hotel Doña Ramonita</b> você vai encontrar imagens de tirar o fôlego, seja apreciando nossos jardins, gramados, árvores e animais silvestres nativos. Vale a pena ver de perto.
 
   </p>
   <div class="w3-row">
@@ -280,7 +325,7 @@ img.hover-shadow {
 
 <br>
 <p class="w3-center">
- Clique na imagem para visualisar a estrutura do hotel.
+ Clique na imagem para vizualisar a estrutura do hotel.
 </p>
     </div>
   </div>
@@ -316,10 +361,10 @@ img.hover-shadow {
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" id="estrutura">
   <h3 class="w3-center">Estrutura do Hotel</h3>
-  <p class="w3-center">Nosso hotel possui uma das melhores estruturas no ramo de hoteis de pesca.<br></p><br>
+  <p class="w3-center">Nosso hotel possui uma das melhores estruturas no ramo de hotéis de pesca.<br></p><br>
 
   <p>
-    Para maior comodidade dispomos de 31 acomodações distribuídos em 3 ambientes para atender diferentes grupos, sendo 15 quartos no prédio principal e outros 16 quartos dispostos em dois prédios com infraestrutura diferenciada e privativa, contendo cozinha completa e churrasqueira. As acomodações estão equipadas com ar condicionado e frigobar.
+    Para maior comodidade dispomos de 31 acomodações distribuídos em 3 ambientes para atender diferentes grupos, sendo 15 quartos no prédio principal e outros 16 quartos dispostos em dois prédios com infraestrutura diferenciada e privativa, contendo cozinha completa e churrasqueira. As acomodações estão equipadas com ar-condicionado e frigobar.
   </br></br>
     Toda estrutura do hotel se encontra às margens do rio Paraná. Contamos com porto privativo e lanchas de fibra equipadas conforme as normas da marinha. Contamos ainda com experientes guias de pesca, para proporcionar uma pescaria de excelência com a segurança que você e sua família merecem.
   </br></br>
@@ -501,7 +546,7 @@ img.hover-shadow {
   <div class="w3-row-padding w3-text-white w3-large">
     <div class="w3-half w3-margin-bottom">
       <div class="w3-display-container">
-        <img src="images/peixes/peixe4.jpg" onclick="openModalPeixes();currentSlide(1)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="Cinque Terre" style="width:100%" height=380>
+        <img src="images/peixes/peixe4.jpg" onclick="openModalPeixes();currentSlidePeixes(1)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="Cinque Terre" style="width:100%" height=380>
         <span class="w3-display-bottomleft w3-padding">Dourado</span>
       </div>
     </div>
@@ -509,13 +554,13 @@ img.hover-shadow {
       <div class="w3-row-padding" style="margin:0 -16px">
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="images/peixes/peixe8.jpg" onclick="openModalPeixes();currentSlide(2)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="New York"  style="width:100%">
+            <img src="images/peixes/peixe8.jpg" onclick="openModalPeixes();currentSlidePeixes(2)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="New York"  style="width:100%">
             <span class="w3-display-bottomleft w3-padding">Pacu</span>
           </div>
         </div>
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="images/peixes/peixe9.jpg"onclick="openModalPeixes();currentSlide(3)" class="hover-shadow cursor w3-round w3-hover-opacity"  alt="San Francisco" style="width:100%">
+            <img src="images/peixes/peixe9.jpg"onclick="openModalPeixes();currentSlidePeixes(3)" class="hover-shadow cursor w3-round w3-hover-opacity"  alt="San Francisco" style="width:100%">
             <span class="w3-display-bottomleft w3-padding">Pintado</span>
           </div>
         </div>
@@ -523,13 +568,13 @@ img.hover-shadow {
       <div class="w3-row-padding" style="margin:0 -16px">
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="images/peixes/peixe3.jpg"onclick="openModalPeixes();currentSlide(4)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="Pisa" style="width:100%">
+            <img src="images/peixes/peixe3.jpg"onclick="openModalPeixes();currentSlidePeixes(4)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="Pisa" style="width:100%">
             <span class="w3-display-bottomleft w3-padding">Pintado</span>
           </div>
         </div>
         <div class="w3-half w3-margin-bottom">
           <div class="w3-display-container">
-            <img src="images/peixes/peixe5.jpg" onclick="openModalPeixes();currentSlide(5)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="Paris" style="width:100%" height="170">
+            <img src="images/peixes/peixe5.jpg" onclick="openModalPeixes();currentSlidePeixes(5)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="Paris" style="width:100%" height="170">
             <span class="w3-display-bottomleft w3-padding">Dourado</span>
           </div>
         </div>
@@ -543,13 +588,13 @@ img.hover-shadow {
   </div>
   <div class="w3-row-padding">
     <div class="w3-half w3-margin-bottom">
-      <img src="images/peixes/peixe2.jpg" onclick="openModalPeixes();currentSlide(6)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="Norway" style="width:100%">
+      <img src="images/peixes/peixe2.jpg" onclick="openModalPeixes();currentSlidePeixes(6)" class="hover-shadow cursor w3-round w3-hover-opacity" alt="Norway" style="width:100%">
       <div class="w3-container w3-white">
         <h3>Pintado</h3>
       </div>
     </div>
     <div class="w3-half w3-margin-bottom">
-      <img src="images/peixes/peixe1.jpg" onclick="openModalPeixes();currentSlide(7)" class="hover-shadow cursor w3-round w3-hover-opacity"  alt="Austria" style="width:100%">
+      <img src="images/peixes/peixe1.jpg" onclick="openModalPeixes();currentSlidePeixes(7)" class="hover-shadow cursor w3-round w3-hover-opacity"  alt="Austria" style="width:100%">
       <div class="w3-container w3-white">
         <h3>Dourado</h3>
       </div>
@@ -621,18 +666,14 @@ img.hover-shadow {
     <h3 class="w3-center">Veja as opções para chegar nesse paraíso da pesca;</h3>
     <p class="w3-center">
     <br><br>
-    -Avião até Foz do Iguaçu ou Assunção e fazemos seu traslado de van ou avião até o hotel.
-    <br>
-    -Traslado de Foz do Iguaçu em ônibus leito ou van
-    <br>
-    - Fretamento com ônibus leito para grupos de qualquer cidade do Brasil
-    <br>
-    -De veiculo próprio (450 km de Foz do Iguaçu, ótimo asfalto)
-    <br>
-    -pista de pouso (base aérea) em Ayolas (12 km do hotel)
-    <br>
-    -pista de pouso (terra) no hotel (1.000 metros)</p>
-
+    <ul>
+        <li> Avião até Foz do Iguaçu ou Assunção e fazemos seu traslado de van ou avião até o hotel.</li>
+        <li>Traslado de Foz do Iguaçu em ônibus leito ou van</li>
+        <li>Fretamento com ônibus leito para grupos de qualquer cidade do Brasil</li>
+        <li>De veiculo próprio (450 km de Foz do Iguaçu, ótimo asfalto)</li>
+        <li>pista de pouso (base aérea) em Ayolas (12 km do hotel)</li>
+        <li>pista de pouso (terra) no hotel (1.000 metros)</p></li>
+    </ul>
 </div>
 
   <div class="w3-content w3-container" style="height: 600px">
@@ -644,7 +685,7 @@ img.hover-shadow {
       <img class="mySlidesTransporte" src="images/van/van4.jpg" style="width:100%">
       <img class="mySlidesTransporte" src="images/van/van5.jpg" style="width:100%">
       <img class="mySlidesTransporte" src="images/van/van6.jpg" style="width:100%">
-      <img class="mySlidesTransporte" src="images/van/van8.jpg" style="width:100%">
+      <img class="mySlidesTransporte" src="images/van/van.jpg" style="width:100%">
     </div>
 </div>
 
@@ -662,10 +703,10 @@ img.hover-shadow {
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" id="tarifario">
   <h3 class="w3-center">Monte seu pacote!</h3>
-  <p class="w3-center"><em>Nosso hotel possui uma das melhores estruturas no ramo de hoteis de pesca.<br> Confira nas imagens a baixo o que te espera em Ayolas-Coratei-Paraguay</em></p><br>
+
 
 <ul>
-<li>Apartamentos duplo, triplo ou quadruplo com ar condicionado e frigobar;</li>
+<li>Apartamentos duplo, triplo ou quádruplo com ar-condicionado e frigobar;</li>
 <li>Café da manhã;</li>
 <li>Almoço ou marmita térmica na lancha;</li>
 <li>Jantar;</li>
@@ -679,7 +720,7 @@ img.hover-shadow {
 <li>Conservadora térmica no barco;</li>
 <li>Licença de pesca e rol da Marinha.</li>
 </ul>
-<h3> Favor entrar em contato por telefone ou email para consultar valores e pacotes.</h3>
+<h3> Favor entrar em contato por telefone ou e-mail para consultar valores e pacotes.</h3>
 </div>
 
 
@@ -695,7 +736,7 @@ img.hover-shadow {
 
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-64" id="contato">
-  <h3 class="w3-center">Para reservas entre em contato por telefone ou email</h3>
+  <h3 class="w3-center">Para reservas entre em contato por telefone ou e-mail</h3>
   <p class="w3-center"><em>Aguardamos seu contato</em></p>
 
   <div class="w3-row w3-padding-32 w3-section">
@@ -703,11 +744,12 @@ img.hover-shadow {
 
       <div class="w3-large w3-margin-bottom w3-center">
         <br><br>
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Campo Mourão, Paraná, BR<br>
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Ayolas - Coratei, Misiones, PY<br>
         <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Fone: +55 (44) 9 9125-2424<br>
         <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Fone: +55 (44) 3017-2424<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: marcaodeayolas@gmail.com<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> e-mail: marcaodeayolas@gmail.com<br>
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Campo Mourão, Paraná, BR<br>
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Ayolas - Coratei, Misiones, PY<br>
+
       </div>
 </div>
 </div>
@@ -725,19 +767,6 @@ img.hover-shadow {
  
 <!-- Add Google Maps -->
 <script>
-function myMap() {
-  var myCenter = new google.maps.LatLng(-27.411898, -56.955272);
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = {center: myCenter, zoom: 5};
-  var map = new google.maps.Map(mapCanvas, mapOptions);
-  var marker = new google.maps.Marker({position:myCenter});
-  marker.setMap(map);
-
-  var infowindow = new google.maps.InfoWindow({
-    content: "Hotel Dona Ramonita!"
-  });
-  infowindow.open(map,marker);
-}
 
 // Modal Image Gallery
 function onClick(element) {
@@ -768,10 +797,6 @@ function  toggleFunction() {
     }
 }
 </script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-
-
 
 <!--
 Scripts para galeria de fotos
@@ -831,7 +856,7 @@ function plusSlidesPeixes(n) {
   showSlidesPeixes(slideIndexPeixes += n);
 }
 
-function currentSlidesPeixes(n) {
+function currentSlidePeixes(n) {
   showSlidesPeixes(slideIndexPeixes = n);
 }
 
@@ -870,7 +895,10 @@ function carousel() {
     x[myIndex-1].style.display = "block";  
     setTimeout(carousel, 2000); // Change image every 2 seconds
 }
+
 </script>
 
 </body>
+
+
 </html>
